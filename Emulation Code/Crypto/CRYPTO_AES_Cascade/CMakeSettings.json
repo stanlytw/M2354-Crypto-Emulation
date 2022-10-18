@@ -1,0 +1,45 @@
+﻿{
+  "configurations": [
+    {
+      "name": "IoT-Debug",
+      "generator": "Unix Makefiles",
+      "configurationType": "Debug",
+      "inheritEnvironments": [
+        "gcc-arm"
+      ],
+      "buildRoot": "${thisFileDir}\\build",
+      "installRoot": "${thisFileDir}",
+      "cmakeCommandArgs": "--target=arm-arm-none-eabi",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "intelliSenseMode": "linux-gcc-arm",
+      "variables": [
+        {
+          "name": "CMAKE_MAKE_PROGRAM",
+          "value": "c:\\cygwin64\\bin\\make.exe"
+        },
+        {
+          "name": "CMAKE_C_COMPILER",
+          "value": "c:/keil_v5/arm/armclang/bin/armclang.exe"
+        },
+        {
+          "name": "CMAKE_C_FLAGS",
+          "value": "-xc -std=c90 -mcpu=cortex-m23 -c --target=arm-arm-none-eabi -march=armv8-m.base  -gdwarf-3 -O0 -fno-rtti -funsigned-char -fshort-enums -fshort-wchar -mlittle-endian -ffunction-sections"
+
+        },
+        {
+          "name": "CMAKE_ASM_COMPILER",
+          "value": "c:/keil_v5/arm/armclang/bin/armasm.exe"
+        },
+        {
+          "name": "CMAKE_ASM_FLAGS",
+          "value": "--cpu=8-M.Base  -g"
+        },
+        {
+          "name": "CMAKE_EXE_LINKER_FLAGS",
+          "value": "--ro-base 0x00000000 --rw-base 0x20000000 --entry Reset_Handler --first __Vectors --strict --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols --info sizes"
+        }
+      ]
+    }
+  ]
+}
